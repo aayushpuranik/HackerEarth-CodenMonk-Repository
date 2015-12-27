@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<string.h>
+int main(void)
+{
+	int i,x,a=0;
+	int j;
+	char s[10][30],sfinal[10][30],s1[30],*ss;
+	scanf("%d",&i);
+	for(x=0;x<i;x++)
+	{
+		scanf("%s",s[x]);
+	}
+	for(x=0;x<i;x++)
+	{
+		ss=s[x];
+		j=0;
+		a=0;
+		while(a<strlen(ss))
+		{
+			if(ss[a]!=ss[a+1])
+			{
+				s1[j]=ss[a];
+				j++;
+				s1[j]='\0';
+			}
+			a++;
+		}
+		for(a=0;a<strlen(s1);a++)
+		{
+			sfinal[x][a]=s1[a];
+		}
+		sfinal[x][a]='\0';
+	}
+	for(a=0;a<i;a++)
+		printf("%s\n",sfinal[a]);
+}
