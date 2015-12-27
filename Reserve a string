@@ -1,0 +1,48 @@
+#include<stdio.h>
+void strRev(char ss[]);
+int main(void)
+{
+	char s[10][30],s1[30];
+	int i,x;
+	scanf("%d",&x);
+	for(i=0;i<x;i++)
+	{
+		scanf("%s",s[i]);
+	}
+	printf("\n");
+	for(i=0;i<x;i++)
+		strRev(s[i]);
+	for(i=0;i<x;i++)
+		printf("%s\n",s[i]);
+		
+	
+}
+
+void strRev(char ss[30])
+{
+	char s1[30];
+	int l=0,len=0,i;
+	char *s;
+	s=ss;
+	while(*s!='\0')
+	{
+		s++;
+		len++;
+		l++;
+	}
+	s--;
+	i=0;
+	while(len!=0)
+	{
+		s1[i]=*s;
+		i++;
+		s--;
+		len--;
+	}
+	s++;
+	for(i=0;i<l;i++)
+	{
+		*s=s1[i];
+		s++;
+	}
+}
